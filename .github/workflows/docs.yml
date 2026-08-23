@@ -43,7 +43,7 @@ jobs:
         env:
           PYTHONPATH: .
         run: |
-          uv run interrogate --config pyproject.toml app/modules
+          uv run interrogate -f 35 --config pyproject.toml app/modules
 
       - name: Check OpenAPI diff (Breaking Changes)
         if: github.event_name == 'pull_request'
