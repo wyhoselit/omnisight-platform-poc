@@ -16,6 +16,11 @@ COPY alembic.ini .
 COPY app/ ./app/
 COPY pytest.ini .
 COPY init_db.py .
+COPY docs/ ./docs/
+COPY mkdocs.yml .
+
+# Build documentation
+RUN uv run mkdocs build --site-dir site
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
