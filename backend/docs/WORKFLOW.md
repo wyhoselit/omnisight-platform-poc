@@ -17,8 +17,46 @@ This script:
 ## Continuous Integration
 Documentation is validated automatically on every PR to `master`:
 - **OpenAPI Breaking Change Detection**: Using `oasdiff` against the `master` baseline
+- **Docstring Coverage Check**: Using `interrogate` (minimum 35%, enforced in CI)
 - **Documentation Build**: Using `mkdocs build --strict`
 - **Changelog Generation**: Summary of API changes added to the GitHub PR
+
+## Docstring Coverage Policy
+
+**Tool**: [interrogate](https://interrogate.readthedocs.io/)
+
+**Scope**: `app/modules/admin`, `app/modules/core`, `app/modules/user`, `app/modules/ai`
+
+**Threshold**:
+- Phase 1: 35% minimum coverage (current baseline: ~36%)
+- Phase 2: 50% target
+- Phase 3: 80% on all public APIs
+
+**Exclusions**: Test files (`*/tests/*`) are excluded from coverage checks.
+
+**Local verification**:
+```bash
+cd backend
+uv run interrogate --fail-under 35 app/modules/admin app/modules/core app/modules/user app/modules/ai --exclude "*/tests/*"
+```
+
+## Versioning Strategy
+
+### Single Source of Truth
+`backend/pyproject.toml` `version` is the only version field maintained manually.
+
+- **FastAPI/OpenAPI version**: Auto-derived via `app.modules.core.version.get_version()` at app startup. Never hardcode version in `app/main.py`.
+- **MkDocs docs**: Always "latest" — documentation tracks the current state of `master`, no separate version number.
+- **OpenAPI spec**: Regenerated on every merge to `master` by CI; version field mirrors `pyproject.toml`.
+
+### Deployment Trigger
+Documentation deploys to GitHub Pages on **every merge to `master`** (continuous docs). No tag-gated releases for docs.
+
+Rationale: internal API reference should always reflect the code that is deployed; version tags gate releases, not documentation freshness.
+
+### Bumping a Release
+1. Edit `version = "x.y.z"` in `backend/pyproject.toml`
+2. Merge to `master` — OpenAPI spec, `/health` metadata, and docs all pick it up automatically
 
 ## Manual Verification
 To build and verify documentation locally:
@@ -27,6 +65,13 @@ cd backend
 PYTHONPATH=. uv run python scripts/update_openapi.py
 uv run mkdocs build --strict
 uv run mkdocs serve
+```
+
+To verify version consistency:
+```bash
+cd backend
+uv run python -c "from app.modules.core.version import get_version; print('Version from pyproject.toml:', get_version())"
+# Visit http://localhost:8000/api/openapi.json and verify version field matches
 ```
 
 ## Team Review Guidelines
@@ -43,6 +88,7 @@ uv run mkdocs serve
    - [ ] All public functions/methods have docstrings
    - [ ] Docstrings follow Google/NumPy style consistently
    - [ ] Type hints present on all public APIs
+   - [ ] Docstring coverage meets minimum threshold (35%)
 
 3. **Documentation Quality**
    - [ ] Changelog entry accurate and descriptive

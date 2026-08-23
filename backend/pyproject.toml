@@ -44,6 +44,29 @@ dependencies = [
     "pypdf>=5.0.0",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "interrogate>=1.7.0",
+]
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["app*"]
+
+[tool.interrogate]
+min_percentage = 35
+paths = [
+    "app/modules/admin",
+    "app/modules/core",
+    "app/modules/user",
+    "app/modules/ai",
+]
+exclude = [
+    "*/tests/*",
+]
+ignore-init-module = false
+ignore-magic = true
+ignore-nested-functions = true
+quiet = false
+show_missing = true
+
