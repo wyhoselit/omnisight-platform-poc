@@ -103,9 +103,9 @@ def create_app(lifespan: Any = lifespan):
     Instrumentator().instrument(app).expose(app)
     
     # Mount MkDocs-generated static documentation
-    docs_dir = Path(__file__).parent.parent / "site"
-    if docs_dir.exists():
-        app.mount("/docs", StaticFiles(directory=str(docs_dir), html=True), name="docs")
+    docs_dir = str(Path(__file__).resolve().parent.parent / "site")
+    if Path(docs_dir).exists():
+        app.mount("/docs/internal", StaticFiles(directory=docs_dir, html=True), name="internal_docs")
     
     return app
 
