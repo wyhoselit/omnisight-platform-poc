@@ -15,8 +15,10 @@ from app.modules.ai.middleware import CostTrackingMiddleware
 from app.modules.ai.rate_limiting import RateLimitingMiddleware
 from app.modules.core.exceptions import AuthException
 from app.modules.core.version import get_version
-from app.api.router import api_router
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 from init_db import init_db
+from app.api.router import api_router
 from app.modules.core.observability import setup_observability
 from app.modules.core.database import engine, get_db
 
@@ -99,7 +101,12 @@ def create_app(lifespan: Any = lifespan):
     
     from prometheus_fastapi_instrumentator import Instrumentator
     Instrumentator().instrument(app).expose(app)
-
+    
+    # Mount MkDocs-generated static documentation
+    docs_dir = Path(__file__).parent.parent / "site"
+    if docs_dir.exists():
+        app.mount("/docs", StaticFiles(directory=str(docs_dir), html=True), name="docs")
+    
     return app
 
 app = create_app()
