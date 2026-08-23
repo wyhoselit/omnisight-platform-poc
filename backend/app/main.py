@@ -14,6 +14,7 @@ from app.modules.core.middleware import RequestIDMiddleware
 from app.modules.ai.middleware import CostTrackingMiddleware
 from app.modules.ai.rate_limiting import RateLimitingMiddleware
 from app.modules.core.exceptions import AuthException
+from app.modules.core.version import get_version
 from app.api.router import api_router
 from init_db import init_db
 from app.modules.core.observability import setup_observability
@@ -29,7 +30,7 @@ async def lifespan(app: FastAPI):
 def create_app(lifespan: Any = lifespan):
     app = FastAPI(
         title="Backend API",
-        version="0.1.0",
+        version=get_version(),
         lifespan=lifespan,
     )
 
