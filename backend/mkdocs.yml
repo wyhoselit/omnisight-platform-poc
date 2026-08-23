@@ -52,21 +52,19 @@ plugins:
 
 nav:
   - Home: index.md
+  - Workflow: WORKFLOW.md
   - API Reference:
       - Overview: api/index.md
       - OpenAPI Spec: api/openapi.md
   - Internal Modules:
       - Overview: modules/index.md
-      - Ai:
-          - Overview: modules/ai/index.md
-          - Llm Service: modules/ai/llm_service.md
-          - Vector Service: modules/ai/vector_service.md
       - Core:
-          - Overview: modules/core/index.md
-          - Config: modules/core/config.md
           - Exceptions: modules/core/exceptions.md
+          - Configuration: modules/core/config.md
           - Security: modules/core/security.md
       - User:
-          - Overview: modules/user/index.md
-          - User: modules/user/user.md
+          - User Model: modules/user/user.md
+      - AI:
+          - LLM Service: modules/ai/llm_service.md
+          - Vector Service: modules/ai/vector_service.md
 strict: true

@@ -18,24 +18,25 @@ def generate_nav():
                 files = sorted(md_dir.glob("*.md"))
                 subsections = []
                 for f in files:
-                    if f.name != "index.md":
-                        subsections.append(f"- {f.stem.replace('_', ' ').title()}: modules/{module_name}/{f.name}")
+                    # Only add if it's a markdown file
+                    subsections.append(f"- {f.stem.replace('_', ' ').title()}: modules/{module_name}/{f.name}")
                 
-                nav_items[module_name] = (md_dir / "index.md", subsections)
+                if subsections:
+                    nav_items[module_name] = subsections
     
     output = []
     output.append("nav:")
     output.append("  - Home: index.md")
+    output.append("  - Workflow: WORKFLOW.md")
     output.append("  - API Reference:")
     output.append("      - Overview: api/index.md")
     output.append("      - OpenAPI Spec: api/openapi.md")
     output.append("  - Internal Modules:")
     output.append("      - Overview: modules/index.md")
     
-    for module, (index_md, subsections) in nav_items.items():
+    for module, subsections in nav_items.items():
         module_title = module.replace("_", " ").title()
         output.append(f"      - {module_title}:")
-        output.append(f"          - Overview: modules/{module}/index.md")
         for line in subsections:
             output.append(f"          {line}")
     
@@ -46,9 +47,11 @@ def generate_nav():
 
 def main():
     mkdocs_path = Path("mkdocs.yml")
-    
+    if not mkdocs_path.exists():
+        print("Error: mkdocs.yml not found")
+        return
+
     content = mkdocs_path.read_text()
-    
     nav_match = re.search(r'^nav:.*?^(?=^[^ \n]|\Z)', content, re.MULTILINE | re.DOTALL)
     
     if nav_match:
