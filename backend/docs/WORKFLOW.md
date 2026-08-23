@@ -67,6 +67,14 @@ uv run mkdocs build --strict
 uv run mkdocs serve
 ```
 
+### Auto-Generate Navigation
+The `scripts/generate_nav.py` script automatically generates the MkDocs navigation from the `app/modules/` directory structure:
+```bash
+cd backend
+python scripts/generate_nav.py
+```
+Update this script when adding new modules or documentation files under `docs/modules/`.
+
 To verify version consistency:
 ```bash
 cd backend
