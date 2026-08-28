@@ -11,7 +11,7 @@ The scheduled OpenWiki GitHub Actions workflow refreshes the repository wiki. Do
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **vue-python-demo** (3862 symbols, 4817 relationships, 65 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **omnisight-platform-poc** (4306 symbols, 5379 relationships, 66 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > Index stale? Run `node .gitnexus/run.cjs analyze` from the project root — it auto-selects an available runner. No `.gitnexus/run.cjs` yet? `npx gitnexus analyze` (npm 11 crash → `npm i -g gitnexus`; #1939).
 
@@ -35,10 +35,10 @@ This project is indexed by GitNexus as **vue-python-demo** (3862 symbols, 4817 r
 
 | Resource | Use for |
 |----------|---------|
-| `gitnexus://repo/vue-python-demo/context` | Codebase overview, check index freshness |
-| `gitnexus://repo/vue-python-demo/clusters` | All functional areas |
-| `gitnexus://repo/vue-python-demo/processes` | All execution flows |
-| `gitnexus://repo/vue-python-demo/process/{name}` | Step-by-step execution trace |
+| `gitnexus://repo/omnisight-platform-poc/context` | Codebase overview, check index freshness |
+| `gitnexus://repo/omnisight-platform-poc/clusters` | All functional areas |
+| `gitnexus://repo/omnisight-platform-poc/processes` | All execution flows |
+| `gitnexus://repo/omnisight-platform-poc/process/{name}` | Step-by-step execution trace |
 
 ## CLI
 

@@ -12,10 +12,11 @@ The backend service is a FastAPI application providing a RESTful API.
 ## Technology Stack
 
 - **Framework**: FastAPI
-- **Language**: Python 3.10+
+- **Language**: Python 3.11+
 - **ASGI Server**: Uvicorn
-- **Dependency Management**: `requirements.txt` (pip)
+- **Package Manager**: `uv` (standardizing on `pyproject.toml` and `uv.lock`)
 - **Configuration**: `pydantic-settings` for environment variable management
+- **Observability**: OpenTelemetry (Tracing, Metrics, Logs), Prometheus, and SLO monitoring via `setup_observability(app, engine)`
 
 ## Key Features
 
@@ -113,12 +114,12 @@ To run the backend service locally:
 
 ## API Versioning
 
-The backend supports multi-version API routing via `backend/app/api/version_router.py`.
+The backend supports multi-version API routing via `backend/app/api/router.py` and `backend/app/api/version_router.py`.
 
-- **v1**: Deprecated/legacy endpoints.
-- **v2**: Current active API.
+- **v1**: Includes health, system config, auth, admin, dashboard, users, and AI endpoints.
+- **v2**: Includes health, auth, admin, dashboard, users, and AI endpoints. AI endpoints in v2 share the same implementation as v1 for now.
 
-All versioning logic is centralized in `backend/app/api/versioning.py`.
+All versioning logic is centralized in `backend/app/api/versioning.py`. The application version is auto-derived from `pyproject.toml` via `backend/app/modules/core/version.py`.
 
 ## Testing
 
@@ -126,7 +127,7 @@ All versioning logic is centralized in `backend/app/api/versioning.py`.
 
 ```bash
 cd backend
-pip install pytest httpx pytest-asyncio
+uv pip install pytest httpx pytest-asyncio pytest-cov
 pytest
 ```
 
@@ -137,6 +138,7 @@ pytest
 - `tests/test_database.py` - Database connection and session tests
 - `tests/test_api_cors.py` - CORS middleware tests
 - `tests/test_api_errors.py` - Error handling tests
+- `backend/tests/system/test_docs_mount.py` - System tests for internal docs mount at `/docs/internal`
 
 ### Test Fixtures
 
@@ -148,5 +150,7 @@ pytest
 ## Source References
 
 -   Main application file: `backend/app/main.py`
--   Dependencies: `backend/requirements.txt`
+-   Project configuration: `backend/pyproject.toml`
+-   Lockfile: `backend/uv.lock`
 -   Docker build file: `backend/Dockerfile`
+-   Internal documentation: `/docs/internal` (MkDocs site)

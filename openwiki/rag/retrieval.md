@@ -1,8 +1,8 @@
 ---
 type: Concept
 title: RAG Retrieval
-description: Explains the retrieval mechanism for the Retrieval-Augmented Generation (RAG) pipeline, including similarity search and API endpoints.
-tags: [RAG, retrieval, similarity search, API, backend]
+description: Explains the retrieval mechanism for the RAG pipeline, including similarity search via abstract vector store interface (ChromaDB or PGVector) with cosine distance scoring.
+tags: [RAG, retrieval, similarity search, cosine distance, chroma, pgvector, backend]
 resource: /backend/app/modules/llm/rag/retriever.py
 ---
 # RAG Retrieval
@@ -31,20 +31,34 @@ The `retrieval_service.py` module exposes a FastAPI endpoint for the retrieval f
 
 *   **Source File**: `backend/app/modules/llm/rag/retrieval_service.py`
 
+## Similarity Search
+
+The search uses **cosine distance** to measure similarity between embeddings. Results include a normalized score (0 to 1) where higher values indicate more similar documents.
+
+For PGVector:
+```sql
+SELECT id, content, meta_data,
+       1 - cosine_distance(embedding, :query_emb) as score
+FROM documents
+ORDER BY embedding <=> :query_emb
+LIMIT :limit
+```
+
 ## Workflow
 
 1.  User query is received (via API or internal call).
 2.  Query is embedded using `EmbeddingGenerator`.
-3.  Query embedding is used to search the ChromaDB collection via `VectorStore.query()`.
-4.  Top-K matching document chunks (with text and metadata) are returned.
-5.  These chunks are then passed to the [LLM Integration](llm_integration.md) to generate a grounded response.
+3.  Query embedding is used to search the vector store (ChromaDB or PGVector) for nearest neighbors.
+4.  Top-K matching document chunks (with text and metadata) are returned along with similarity scores.
+5.  These chunks are formatted as context and passed to the [LLM Integration](llm_integration.md) to generate a grounded response.
 
 ## Configuration
 
-*   The number of results (`n_results`) defaults to 5 but can be adjusted per request.
-*   The similarity metric is determined by the ChromaDB collection configuration (default is typically cosine similarity).
+*   **`n_results`**: Number of top results to return (defaults to 5).
+*   **`filter_metadata`**: Optional metadata filter to narrow search scope.
+*   **Vector Store**: Select via `VECTOR_STORE` environment variable (`chroma` or `pgvector`).
 
 ## Dependencies
 
 *   [Embedding Generation](embedding_generation.md) - for query embedding
-*   [Vector Store](vector_store.md) - for storage and search
+*   [Vector Store](vector_store.md) - for storage and search (ChromaDB or PGVector)

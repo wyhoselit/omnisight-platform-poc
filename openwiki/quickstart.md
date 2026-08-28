@@ -1,8 +1,8 @@
 ---
 type: Project
 title: Full-Stack Demo (Vuetify + FastAPI)
-description: A monorepo demo application with Vue 3 + Vuetify frontend and FastAPI backend. Provides a clean skeleton for full-stack development with Docker orchestration.
-tags: [monorepo, vue3, fastapi, vuetify, docker, typescript]
+description: Monorepo demonstrating full-stack development with Vue 3 + Vuetify frontend and FastAPI backend, featuring AI/LLM integration, RAG pipeline, Docker orchestration, and Kubernetes deployment readiness.
+tags: [monorepo, vue3, fastapi, vuetify, docker, typescript, ai, llm, rag]
 ---
 
 # Full-Stack Demo
@@ -68,9 +68,11 @@ npm run dev
 
 - [Backend Service](/openwiki/backend-service.md) - FastAPI backend with health and AI endpoints
 - [Frontend App](/openwiki/frontend-app.md) - Vue 3 + Vuetify frontend application with chat capabilities
+- [RAG Pipeline](/openwiki/rag/overview.md) - Retrieval-Augmented Generation with ChromaDB and PGVector
 - [Docker Orchestration](/openwiki/docker-orchestration.md) - Container configuration and deployment
 - [Kubernetes Deployment](/openwiki/kubernetes/overview.md) - Kubernetes deployment manifests and GKE deployment script
 - [Observability](/openwiki/observability.md) - OpenTelemetry, metrics, tracing, logging, and Grafana dashboards
+- [Internal Docs](/docs/internal) - Auto-generated API reference (MkDocs) mounted in FastAPI
 
 ## Development Workflow
 

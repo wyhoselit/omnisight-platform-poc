@@ -1,43 +1,53 @@
 ---
 type: Concept
 title: RAG Vector Store
-description: Describes the ChromaDB-based vector store used for persisting and querying document embeddings in the RAG pipeline.
-tags: [RAG, vector store, ChromaDB, backend]
-resource: /backend/app/modules/llm/rag/vector_store.py
+description: Describes the abstract vector store interface and its implementations (ChromaDB for dev, PGVector for prod) used for persisting and querying document embeddings in the RAG pipeline.
+tags: [RAG, vector store, ChromaDB, PGVector, backend, HNSW]
+resource: /backend/app/modules/ai/services/vector_store.py
 ---
 # RAG Vector Store
 
 The Vector Store is the persistence layer for the RAG pipeline, responsible for storing document embeddings along with their associated text and metadata, and enabling efficient similarity search.
 
-## Implementation
+## Abstraction Layer
 
-The `vector_store.py` module provides a wrapper around ChromaDB, a popular open-source vector database.
+The system uses an abstract base class `VectorStore` to support multiple backends. This allows for a zero-infrastructure local development environment (ChromaDB) and a robust, production-ready environment (PGVector).
 
-*   **ChromaDB**: Used as the underlying storage engine. It persists data to disk (by default in `./chroma_db`) and provides fast nearest-neighbor search.
-*   **Singleton Pattern**: The module exposes a `get_vector_store` function that returns a singleton instance of the `VectorStore` class, ensuring a single connection pool to the database.
+- **Interface**: `backend/app/modules/ai/services/vector_store.py`
+- **Factory**: `backend/app/modules/ai/services/vector_store_factory.py` (singleton pattern)
 
-## `VectorStore` Class
+## Implementations
 
-**`__init__(self, persist_directory: str = "./chroma_db", collection_name: str = "rag_documents")`**
-*   Initializes a `chromadb.PersistentClient` pointing to `persist_directory`.
-*   Gets or creates a collection named `collection_name`.
-*   Disables anonymized telemetry.
+### ChromaDB (Local Development)
+- **Source**: `backend/app/modules/ai/services/chroma_vector_store.py`
+- **Engine**: File-based `chromadb.PersistentClient` (defaults to `./chroma_db`).
+- **Characteristics**: Fast, zero setup, ideal for local testing and iteration.
 
-**`add_documents(self, documents: list[dict])`**
-*   Adds a batch of documents to the collection.
-*   Expected dictionary keys: `id`, `embedding`, `document` (the text content), `metadata`.
+### PGVector (Production)
+- **Source**: `backend/app/modules/ai/services/pgvector_store.py`
+- **Engine**: PostgreSQL with the `pgvector` extension.
+- **Indexing**: Uses **HNSW (Hierarchical Navigable Small World)** indexes for fast approximate nearest neighbor (ANN) search.
+- **Optimization**: Tunable `m` and `ef_construction` parameters via environment variables (`PGVECTOR_HNSW_M`, `PGVECTOR_HNSW_EF_CONSTRUCTION`).
+- **Schema**: Maps to the `Document` SQLAlchemy model in `backend/app/modules/llm/rag/models.py`.
 
-**`query(self, query_embedding: list[float], n_results: int = 5) -> dict`**
-*   Performs a similarity search against the collection using the provided `query_embedding`.
-*   Returns the top `n_results` matches, including their IDs, documents, metadata, and distances.
+## Core Methods
 
-**`get_collection_info(self) -> dict`**
-*   Returns basic info about the collection, such as its name and document count.
+All implementations must provide:
+
+- **`add_documents(documents: list[dict])`**: Persists document text and embeddings.
+- **`search(query_embedding: list[float], limit: int = 10)`**: Performs similarity search (cosine distance) and returns `SearchResult` objects.
+- **`delete(ids: list[str])`**: Removes documents by ID.
+- **`health_check()`**: Verifies database connectivity.
 
 ## Usage in RAG Pipeline
 
-1.  After [Embedding Generation](embedding_generation.md), the [Ingestion Service](document_ingestion.md) calls `add_documents` to persist the embedded chunks.
-2.  During a user query, the [Retrieval](retrieval.md) service calls `query` with the user's query embedding to find the most relevant document chunks.
+1.  After [Embedding Generation](embedding_generation.md), the [Ingestion Service](document_ingestion.md) calls `add_documents` to persist embedded chunks.
+2.  During a user query, the [Retrieval](retrieval.md) service calls `search` via the factory-provided instance to find relevant context.
 
-*   **Source File**: `backend/app/modules/llm/rag/vector_store.py`
-*   **Dependency**: `chromadb`
+## Configuration
+
+Select the implementation via environment:
+```env
+VECTOR_STORE=pgvector  # or 'chroma'
+DATABASE_URL=postgresql+asyncpg://user:pass@host:port/dbname
+```
