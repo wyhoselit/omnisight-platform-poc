@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: gcr.io/your-gcp-project-id/vue-python-demo-backend:latest
+        image: asia-east1-docker.pkg.dev/omnisight-poc-18/omnisight-repo/backend:latest
         ports:
         - containerPort: 8000
         readinessProbe:

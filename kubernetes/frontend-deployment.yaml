@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gcr.io/your-gcp-project-id/vue-python-demo-frontend:latest
+        image: asia-east1-docker.pkg.dev/omnisight-poc-18/omnisight-repo/frontend:latest
         ports:
         - containerPort: 80
 ---
