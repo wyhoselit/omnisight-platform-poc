@@ -46,3 +46,5 @@ backend/.coverage
 
 
 .token
+
+.codebase-memory
