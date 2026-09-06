@@ -1,0 +1,980 @@
+[
+  {
+    "name": "Core Architecture & Infrastructure",
+    "slug": "core-architecture-infrastructure",
+    "files": [],
+    "children": [
+      {
+        "name": "Core Architecture & Infrastructure — ARCHITECTURE.md",
+        "slug": "core-architecture-infrastructure-architecture-md",
+        "files": [
+          "ARCHITECTURE.md"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — CONTEXT.md",
+        "slug": "core-architecture-infrastructure-context-md",
+        "files": [
+          "CONTEXT.md"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — project.md",
+        "slug": "core-architecture-infrastructure-project-md",
+        "files": [
+          "project.md"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — setup.md",
+        "slug": "core-architecture-infrastructure-setup-md",
+        "files": [
+          "setup.md"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — backend",
+        "slug": "core-architecture-infrastructure-backend",
+        "files": [
+          "backend/alembic.ini",
+          "backend/init_db.py",
+          "backend/main.py",
+          "backend/mutmut.conf.py",
+          "backend/pyproject.toml",
+          "backend/pytest.ini"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — alembic",
+        "slug": "core-architecture-infrastructure-alembic",
+        "files": [
+          "backend/alembic/README",
+          "backend/alembic/env.py",
+          "backend/alembic/script.py.mako",
+          "backend/alembic/versions/3c4351fa93f3_migrate_trace_configurations_to_system_.py",
+          "backend/alembic/versions/5c5a3b15fd7e_seed_initial_admin_user_and_roles.py",
+          "backend/alembic/versions/739f2db1fc49_create_system_settings_table.py",
+          "backend/alembic/versions/8c4783b0e69d_create_users_table.py",
+          "backend/alembic/versions/8c4783b0e69d_create_users_table_additional.py",
+          "backend/alembic/versions/a1b2c3d4e5f6_create_documents_table_hnsw_index.py",
+          "backend/alembic/versions/ce3e0c013c1f_initial_migration.py",
+          "backend/alembic/versions/f2a7b8c9d0e1_create_trace_configurations_table.py"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — app",
+        "slug": "core-architecture-infrastructure-app",
+        "files": [
+          "backend/app/__init__.py",
+          "backend/app/conftest.py",
+          "backend/app/main.py",
+          "backend/app/modules/__init__.py",
+          "backend/app/modules/core/__init__.py",
+          "backend/app/modules/core/config.py",
+          "backend/app/modules/core/database.py",
+          "backend/app/modules/core/exceptions.py",
+          "backend/app/modules/core/logging.py",
+          "backend/app/modules/core/middleware.py",
+          "backend/app/modules/core/security.py",
+          "backend/app/modules/core/tests/__init__.py",
+          "backend/app/modules/core/tests/test_config.py",
+          "backend/app/modules/core/tests/test_database.py",
+          "backend/app/modules/core/tests/test_exceptions.py",
+          "backend/app/modules/core/tests/test_logging.py",
+          "backend/app/modules/core/tests/test_middleware.py",
+          "backend/app/modules/core/tests/test_security.py",
+          "backend/app/modules/core/version.py"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — docs",
+        "slug": "core-architecture-infrastructure-docs",
+        "files": [
+          "backend/docs/modules/core/config.md",
+          "backend/docs/modules/core/exceptions.md",
+          "backend/docs/modules/core/security.md"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — site",
+        "slug": "core-architecture-infrastructure-site",
+        "files": [
+          "backend/site/modules/core/config/index.html",
+          "backend/site/modules/core/exceptions/index.html",
+          "backend/site/modules/core/security/index.html"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — tests",
+        "slug": "core-architecture-infrastructure-tests",
+        "files": [
+          "backend/tests/system/test_init_db.py"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — architecture",
+        "slug": "core-architecture-infrastructure-architecture",
+        "files": [
+          "docs/architecture/ER-diagram.md"
+        ]
+      },
+      {
+        "name": "Core Architecture & Infrastructure — database",
+        "slug": "core-architecture-infrastructure-database",
+        "files": [
+          "docs/database/query-examples.md"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "API Routing & Versioning",
+    "slug": "api-routing-versioning",
+    "files": [],
+    "children": [
+      {
+        "name": "API Routing & Versioning — app",
+        "slug": "api-routing-versioning-app",
+        "files": [
+          "backend/app/api/__init__.py",
+          "backend/app/api/router.py",
+          "backend/app/api/tests/__init__.py",
+          "backend/app/api/v1/__init__.py",
+          "backend/app/api/v1/deps.py",
+          "backend/app/api/v1/endpoints/__init__.py",
+          "backend/app/api/v2/__init__.py",
+          "backend/app/api/version_router.py",
+          "backend/app/api/versioning.py"
+        ]
+      },
+      {
+        "name": "API Routing & Versioning — docs",
+        "slug": "api-routing-versioning-docs",
+        "files": [
+          "backend/docs/api/index.md",
+          "backend/docs/api/openapi.md",
+          "backend/docs/openapi/openapi.json"
+        ]
+      },
+      {
+        "name": "API Routing & Versioning — scripts",
+        "slug": "api-routing-versioning-scripts",
+        "files": [
+          "backend/scripts/update_openapi.py"
+        ]
+      },
+      {
+        "name": "API Routing & Versioning — site",
+        "slug": "api-routing-versioning-site",
+        "files": [
+          "backend/site/api/index.html",
+          "backend/site/api/openapi/index.html",
+          "backend/site/openapi/openapi.json"
+        ]
+      },
+      {
+        "name": "API Routing & Versioning — tests",
+        "slug": "api-routing-versioning-tests",
+        "files": [
+          "backend/tests/api/v1/test_auth_bearer.py"
+        ]
+      },
+      {
+        "name": "API Routing & Versioning — src",
+        "slug": "api-routing-versioning-src",
+        "files": [
+          "frontend/src/shared/api.ts",
+          "frontend/src/shared/useApi.ts"
+        ]
+      },
+      {
+        "name": "API Routing & Versioning — openwiki",
+        "slug": "api-routing-versioning-openwiki",
+        "files": [
+          "openwiki/api-design-principles.md"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Authentication & User Management",
+    "slug": "authentication-user-management",
+    "files": [
+      "backend/app/modules/user/__init__.py",
+      "backend/app/modules/user/api/__init__.py",
+      "backend/app/modules/user/api/auth.py",
+      "backend/app/modules/user/api/auth/__init__.py",
+      "backend/app/modules/user/api/auth/auth.py",
+      "backend/app/modules/user/api/health.py",
+      "backend/app/modules/user/api/users.py",
+      "backend/app/modules/user/tests/test_api_errors.py",
+      "backend/app/modules/user/tests/test_users.py",
+      "backend/app/modules/user/user.py",
+      "backend/docs/modules/user/user.md",
+      "backend/site/modules/user/user/index.html",
+      "frontend/src/modules/layouts/AuthLayout.vue",
+      "frontend/src/modules/user/LoginForm.vue",
+      "frontend/src/modules/user/services/auth.ts",
+      "frontend/src/modules/user/stores/auth.ts",
+      "frontend/src/modules/user/views/LoginForm.vue",
+      "frontend/src/modules/user/views/RegistrationForm.vue",
+      "frontend/src/stores/auth.ts"
+    ]
+  },
+  {
+    "name": "System Administration & Configuration",
+    "slug": "system-administration-configuration",
+    "files": [
+      "backend/app/modules/admin/__init__.py",
+      "backend/app/modules/admin/api/__init__.py",
+      "backend/app/modules/admin/api/logs.py",
+      "backend/app/modules/admin/api/status.py",
+      "backend/app/modules/admin/models/role/role.py",
+      "backend/app/modules/admin/models/trace/trace_configuration.py",
+      "backend/app/modules/admin/models/trace/trace_entry.py",
+      "backend/app/modules/admin/tests/__init__.py",
+      "backend/app/modules/admin/tests/test_admin.py",
+      "backend/app/modules/admin/tests/test_logs.py",
+      "backend/app/modules/admin/utils/redactor.py",
+      "backend/app/modules/system/__init__.py",
+      "backend/app/modules/system/api/__init__.py",
+      "backend/app/modules/system/api/config.py",
+      "backend/app/modules/system/api/health.py",
+      "backend/app/modules/system/models/system_setting.py",
+      "backend/app/modules/system/services/setting_service.py",
+      "backend/app/modules/system/tests/test_all_config.py",
+      "backend/app/modules/system/tests/test_all_config_error.py",
+      "backend/app/modules/system/tests/test_api_config.py",
+      "backend/app/modules/system/tests/test_api_health.py",
+      "backend/app/modules/system/tests/test_bearer_auth.py",
+      "backend/app/modules/system/tests/test_config.py",
+      "backend/app/modules/system/tests/test_database.py",
+      "backend/tests/system/test_token_initialization.py",
+      "backend/tests/system/test_token_service.py",
+      "frontend/src/modules/admin/admin-endpoints.ts",
+      "frontend/src/modules/admin/components/SettingControl.vue",
+      "frontend/src/modules/admin/config-endpoints.ts",
+      "frontend/src/modules/admin/logs-endpoints.ts",
+      "frontend/src/modules/admin/tracing-endpoints.ts",
+      "frontend/src/modules/admin/views/AdminLayout.vue",
+      "frontend/src/modules/admin/views/AdminStatus.vue",
+      "frontend/src/modules/admin/views/LogsView.vue",
+      "frontend/src/modules/admin/views/SettingsView.vue",
+      "frontend/src/modules/admin/views/SystemInfo.vue"
+    ]
+  },
+  {
+    "name": "AI & LLM Services",
+    "slug": "ai-llm-services",
+    "files": [],
+    "children": [
+      {
+        "name": "AI & LLM Services — app",
+        "slug": "ai-llm-services-app",
+        "files": [
+          "backend/app/modules/ai/__init__.py",
+          "backend/app/modules/ai/actors/dramatiq_actors.py",
+          "backend/app/modules/ai/api/__init__.py",
+          "backend/app/modules/ai/api/chat.py",
+          "backend/app/modules/ai/api/deps.py",
+          "backend/app/modules/ai/middleware.py",
+          "backend/app/modules/ai/models/model_registry.py",
+          "backend/app/modules/ai/rate_limiting.py",
+          "backend/app/modules/ai/services/__init__.py",
+          "backend/app/modules/ai/services/chroma_vector_store.py",
+          "backend/app/modules/ai/services/llm_service.py",
+          "backend/app/modules/ai/services/pgvector_store.py",
+          "backend/app/modules/ai/services/vector_service.py",
+          "backend/app/modules/ai/services/vector_store.py",
+          "backend/app/modules/ai/services/vector_store_factory.py",
+          "backend/app/modules/ai/tests/test_ai_endpoints.py",
+          "backend/app/modules/ai/tests/test_llm_service.py"
+        ]
+      },
+      {
+        "name": "AI & LLM Services — docs",
+        "slug": "ai-llm-services-docs",
+        "files": [
+          "backend/docs/modules/ai/llm_service.md",
+          "backend/docs/modules/ai/vector_service.md"
+        ]
+      },
+      {
+        "name": "AI & LLM Services — site",
+        "slug": "ai-llm-services-site",
+        "files": [
+          "backend/site/modules/ai/llm_service/index.html",
+          "backend/site/modules/ai/vector_service/index.html"
+        ]
+      },
+      {
+        "name": "AI & LLM Services — tests",
+        "slug": "ai-llm-services-tests",
+        "files": [
+          "backend/tests/unit/test_chroma_vector_store.py",
+          "backend/tests/unit/test_pgvector_store.py",
+          "backend/tests/unit/test_vector_store_factory.py",
+          "backend/tests/unit/test_vector_store_interface.py"
+        ]
+      },
+      {
+        "name": "AI & LLM Services — src",
+        "slug": "ai-llm-services-src",
+        "files": [
+          "frontend/src/modules/ai/views/ChatView.vue"
+        ]
+      },
+      {
+        "name": "AI & LLM Services — openwiki",
+        "slug": "ai-llm-services-openwiki",
+        "files": [
+          "openwiki/ai-rag-orchestration.md"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "RAG Pipeline",
+    "slug": "rag-pipeline",
+    "files": [
+      "backend/app/modules/llm/rag/document_loader.py",
+      "backend/app/modules/llm/rag/embedding_generator.py",
+      "backend/app/modules/llm/rag/ingestion_service.py",
+      "backend/app/modules/llm/rag/llm_integrator.py",
+      "backend/app/modules/llm/rag/mlflow_tracker.py",
+      "backend/app/modules/llm/rag/models.py",
+      "backend/app/modules/llm/rag/retrieval_service.py",
+      "backend/app/modules/llm/rag/retriever.py",
+      "backend/app/modules/llm/rag/tests/test_document_processing.py",
+      "backend/app/modules/llm/rag/tests/test_embedding_vector.py",
+      "backend/app/modules/llm/rag/tests/test_integration.py",
+      "backend/app/modules/llm/rag/tests/test_mlflow.py",
+      "backend/app/modules/llm/rag/text_splitter.py",
+      "backend/app/modules/llm/rag/vector_store.py",
+      "openwiki/rag/document_ingestion.md",
+      "openwiki/rag/embedding_generation.md",
+      "openwiki/rag/index.md",
+      "openwiki/rag/llm_integration.md",
+      "openwiki/rag/overview.md",
+      "openwiki/rag/retrieval.md",
+      "openwiki/rag/vector_store.md"
+    ]
+  },
+  {
+    "name": "Dashboard & Analytics",
+    "slug": "dashboard-analytics",
+    "files": [
+      "backend/app/modules/dashboard/__init__.py",
+      "backend/app/modules/dashboard/api/__init__.py",
+      "backend/app/modules/dashboard/api/dashboard.py",
+      "backend/app/modules/dashboard/tests/test_api_cors.py",
+      "backend/app/modules/dashboard/tests/test_dashboard.py",
+      "backend/app/modules/user/api/dashboard.py",
+      "frontend/src/modules/dashboard/views/Dashboard.vue",
+      "frontend/src/modules/shared/components/ApexChart.vue",
+      "todo/dashboard.md"
+    ]
+  },
+  {
+    "name": "Observability & Tracing",
+    "slug": "observability-tracing",
+    "files": [],
+    "children": [
+      {
+        "name": "Observability & Tracing — OBSERVABILITY_SPEC.md",
+        "slug": "observability-tracing-observability-spec-md",
+        "files": [
+          "OBSERVABILITY_SPEC.md"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — app",
+        "slug": "observability-tracing-app",
+        "files": [
+          "backend/app/modules/core/observability.py",
+          "backend/app/modules/core/tests/test_observability.py",
+          "backend/app/modules/core/tests/test_tracing.py",
+          "backend/app/modules/core/tracing.py"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — docker-compose.observability.yml",
+        "slug": "observability-tracing-docker-compose-observability-yml",
+        "files": [
+          "docker-compose.observability.yml"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — observability",
+        "slug": "observability-tracing-observability",
+        "files": [
+          "dockerdata/observability/grafana/provisioning/dashboards/Overall-observability.json",
+          "dockerdata/observability/grafana/provisioning/dashboards/backend-observability.json",
+          "dockerdata/observability/grafana/provisioning/dashboards/dashboards.yml",
+          "dockerdata/observability/grafana/provisioning/dashboards/frontend-observability.json",
+          "dockerdata/observability/grafana/provisioning/dashboards/nginx-observability.json",
+          "dockerdata/observability/grafana/provisioning/datasources/datasources.yml",
+          "dockerdata/observability/loki/loki-config.yml",
+          "dockerdata/observability/otel-collector/collector-config.yml",
+          "dockerdata/observability/otel-collector/test-sender.sh",
+          "dockerdata/observability/prometheus/alert.rules",
+          "dockerdata/observability/prometheus/alertmanager.yml",
+          "dockerdata/observability/prometheus/alerts.yml",
+          "dockerdata/observability/prometheus/prometheus.yml",
+          "dockerdata/observability/prometheus/slo-alert.rules",
+          "dockerdata/observability/tempo/tempo-config.yml"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — docs",
+        "slug": "observability-tracing-docs",
+        "files": [
+          "docs/backend-metric.txt",
+          "docs/frontend-metric.txt",
+          "docs/grafana-verification.md",
+          "docs/metrics-reference.md",
+          "docs/oTel-metrics.txt",
+          "docs/observability-summary.md",
+          "docs/performance-analysis.md",
+          "docs/performance-testing-results.md",
+          "docs/telemetry-verification.md"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — cypress",
+        "slug": "observability-tracing-cypress",
+        "files": [
+          "frontend/cypress/e2e/observability.cy.ts"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — src",
+        "slug": "observability-tracing-src",
+        "files": [
+          "frontend/src/modules/core/metrics/metrics.ts",
+          "frontend/src/modules/core/metrics/useComponentRenderMetrics.ts",
+          "frontend/src/modules/core/metrics/useMetrics.ts",
+          "frontend/src/modules/core/observability.ts",
+          "frontend/src/modules/core/router-observability.ts",
+          "frontend/src/modules/core/tests/observability.spec.ts",
+          "frontend/src/plugins/axios-instrumentation.ts",
+          "frontend/src/plugins/pinia-instrumentation.ts",
+          "frontend/src/plugins/router-instrumentation.ts"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — tests",
+        "slug": "observability-tracing-tests",
+        "files": [
+          "frontend/tests/modules/core/observability.spec.ts",
+          "frontend/tests/modules/core/observability.test.ts"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — observability.check.sh",
+        "slug": "observability-tracing-observability-check-sh",
+        "files": [
+          "observability.check.sh"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — research",
+        "slug": "observability-tracing-research",
+        "files": [
+          "research/openTelemetry-injection.md"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — specs",
+        "slug": "observability-tracing-specs",
+        "files": [
+          "specs/openTelemetry-integration-spec.md"
+        ]
+      },
+      {
+        "name": "Observability & Tracing — todo",
+        "slug": "observability-tracing-todo",
+        "files": [
+          "todo/fix_grafana_dashboard.sh",
+          "todo/oTel-metrics.txt"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Frontend Shell & UI Components",
+    "slug": "frontend-shell-ui-components",
+    "files": [
+      "frontend/Dockerfile",
+      "frontend/cypress.config.ts",
+      "frontend/cypress/e2e/criticalUserFlow.cy.ts",
+      "frontend/cypress/support/commands.ts",
+      "frontend/cypress/support/component-index.html",
+      "frontend/cypress/support/component.ts",
+      "frontend/cypress/support/e2e.ts",
+      "frontend/index.html",
+      "frontend/nginx.conf",
+      "frontend/package.json",
+      "frontend/readme.md",
+      "frontend/src/App.vue",
+      "frontend/src/main.ts",
+      "frontend/src/modules/layouts/DefaultLayout.vue",
+      "frontend/src/plugins/vuetify.ts",
+      "frontend/src/router/index.ts",
+      "frontend/src/stores/theme.ts",
+      "frontend/tsconfig.json",
+      "frontend/tsconfig.node.json",
+      "frontend/vite.config.ts",
+      "frontend/vitest.config.ts"
+    ]
+  },
+  {
+    "name": "Deployment & Operations",
+    "slug": "deployment-operations",
+    "files": [
+      "DOCKERDATA_SETUP.md",
+      "backend/Dockerfile",
+      "backend/Makefile",
+      "backend/docker-entrypoint.sh",
+      "backend/entrypoint.sh",
+      "deploy-k8s.sh",
+      "deploy.sh",
+      "docker-compose.override.yml",
+      "docker-compose.prod.yml",
+      "docker-compose.yml",
+      "dockerdata/dev/frontend/nginx/nginx.conf",
+      "dockerdata/prod/frontend/nginx/nginx.conf",
+      "docs/deployment-process.md",
+      "kubernetes/backend-deployment.yaml",
+      "kubernetes/frontend-deployment.yaml",
+      "kubernetes/ingress.yaml",
+      "openwiki/devops-deployment.md",
+      "openwiki/docker-orchestration.md",
+      "openwiki/kubernetes/index.md",
+      "openwiki/kubernetes/overview.md",
+      "scripts/performance-test.py",
+      "scripts/security-tests.sh",
+      "scripts/verify-rollout.sh"
+    ]
+  },
+  {
+    "name": "Documentation & Specifications",
+    "slug": "documentation-specifications",
+    "files": [],
+    "children": [
+      {
+        "name": "Documentation & Specifications — AGENTS.md",
+        "slug": "documentation-specifications-agents-md",
+        "files": [
+          "AGENTS.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — AGENTS.sample.md",
+        "slug": "documentation-specifications-agents-sample-md",
+        "files": [
+          "AGENTS.sample.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — CLAUDE.md",
+        "slug": "documentation-specifications-claude-md",
+        "files": [
+          "CLAUDE.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — README.md",
+        "slug": "documentation-specifications-readme-md",
+        "files": [
+          "README.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — backend",
+        "slug": "documentation-specifications-backend",
+        "files": [
+          "backend/README.md",
+          "backend/mkdocs.yml"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — backend-docs",
+        "slug": "documentation-specifications-backend-docs",
+        "files": [
+          "backend/docs/WORKFLOW.md",
+          "backend/docs/index.md",
+          "backend/docs/modules/index.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — backend-scripts",
+        "slug": "documentation-specifications-backend-scripts",
+        "files": [
+          "backend/scripts/generate_nav.py"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — backend-site",
+        "slug": "documentation-specifications-backend-site",
+        "files": [
+          "backend/site/404.html",
+          "backend/site/WORKFLOW/index.html",
+          "backend/site/assets/_mkdocstrings.css",
+          "backend/site/assets/javascripts/lunr/tinyseg.js",
+          "backend/site/index.html",
+          "backend/site/modules/index.html",
+          "backend/site/objects.inv",
+          "backend/site/search/search_index.json",
+          "backend/site/sitemap.xml"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — backend-tests",
+        "slug": "documentation-specifications-backend-tests",
+        "files": [
+          "backend/tests/system/test_docs_mount.py"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — docs-agents",
+        "slug": "documentation-specifications-docs-agents",
+        "files": [
+          "docs/agents/domain.md",
+          "docs/agents/issue-tracker.md",
+          "docs/agents/triage-labels.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — docs-architecture-decisions",
+        "slug": "documentation-specifications-docs-architecture-decisions",
+        "files": [
+          "docs/architecture-decisions/0001-vector-database-choice.md",
+          "docs/architecture-decisions/0002-module-boundaries.md",
+          "docs/architecture-decisions/0003-scaling-strategy.md",
+          "docs/architecture-decisions/001-architecture.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — docs-changelog",
+        "slug": "documentation-specifications-docs-changelog",
+        "files": [
+          "docs/changelog/2026-08-22-add-docstrings-to-admin-and-core.md",
+          "docs/changelog/2026-08-22-add-docstrings-to-rag-ingestion-service.md",
+          "docs/changelog/updates.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — docs",
+        "slug": "documentation-specifications-docs",
+        "files": [
+          "docs/cypress-testing-guide.md",
+          "docs/feature-dev-workflow.md",
+          "docs/security-analysis.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — docs-research",
+        "slug": "documentation-specifications-docs-research",
+        "files": [
+          "docs/research/vue-charting-libraries.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — knowledgeGraph.sh",
+        "slug": "documentation-specifications-knowledgegraph-sh",
+        "files": [
+          "knowledgeGraph.sh"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — openspec-changes",
+        "slug": "documentation-specifications-openspec-changes",
+        "files": [
+          "openspec/changes/archive/2025-07-27-create-admin-system-status-page-with-roles/design.md",
+          "openspec/changes/archive/2025-07-27-create-admin-system-status-page-with-roles/proposal.md",
+          "openspec/changes/archive/2025-07-27-create-admin-system-status-page-with-roles/specs/admin-system-status/spec.md",
+          "openspec/changes/archive/2025-07-27-create-admin-system-status-page-with-roles/specs/role-management/spec.md",
+          "openspec/changes/archive/2025-07-27-create-admin-system-status-page-with-roles/tasks.md",
+          "openspec/changes/archive/2026-07-23-fix-alembic-configuration/design.md",
+          "openspec/changes/archive/2026-07-23-fix-alembic-configuration/proposal.md",
+          "openspec/changes/archive/2026-07-23-fix-alembic-configuration/specs/alembic-container-setup/spec.md",
+          "openspec/changes/archive/2026-07-23-fix-alembic-configuration/tasks.md",
+          "openspec/changes/archive/2026-07-24-setup-project-skeleton/design.md",
+          "openspec/changes/archive/2026-07-24-setup-project-skeleton/proposal.md",
+          "openspec/changes/archive/2026-07-24-setup-project-skeleton/specs/backend-service/spec.md",
+          "openspec/changes/archive/2026-07-24-setup-project-skeleton/specs/docker-orchestration/spec.md",
+          "openspec/changes/archive/2026-07-24-setup-project-skeleton/specs/frontend-app/spec.md",
+          "openspec/changes/archive/2026-07-24-setup-project-skeleton/tasks.md",
+          "openspec/changes/archive/2026-07-25-add-tests-for-all-features/design.md",
+          "openspec/changes/archive/2026-07-25-add-tests-for-all-features/proposal.md",
+          "openspec/changes/archive/2026-07-25-add-tests-for-all-features/specs/backend-api-integration-tests/spec.md",
+          "openspec/changes/archive/2026-07-25-add-tests-for-all-features/specs/backend-unit-tests/spec.md",
+          "openspec/changes/archive/2026-07-25-add-tests-for-all-features/specs/ci-test-integration/spec.md",
+          "openspec/changes/archive/2026-07-25-add-tests-for-all-features/specs/frontend-component-tests/spec.md",
+          "openspec/changes/archive/2026-07-25-add-tests-for-all-features/specs/frontend-router-tests/spec.md",
+          "openspec/changes/archive/2026-07-25-add-tests-for-all-features/specs/frontend-state-management-tests/spec.md",
+          "openspec/changes/archive/2026-07-25-add-tests-for-all-features/tasks.md",
+          "openspec/changes/archive/2026-07-25-enforce-uv-backend-venv/design.md",
+          "openspec/changes/archive/2026-07-25-enforce-uv-backend-venv/proposal.md",
+          "openspec/changes/archive/2026-07-25-enforce-uv-backend-venv/specs/uv-backend-venv-management/spec.md",
+          "openspec/changes/archive/2026-07-25-enforce-uv-backend-venv/tasks.md",
+          "openspec/changes/archive/2026-07-25-enhance-dashboard-with-real-api-data/design.md",
+          "openspec/changes/archive/2026-07-25-enhance-dashboard-with-real-api-data/proposal.md",
+          "openspec/changes/archive/2026-07-25-enhance-dashboard-with-real-api-data/specs/backend-dashboard-stats/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-dashboard-with-real-api-data/specs/backend-users-list/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-dashboard-with-real-api-data/specs/frontend-dashboard-real-data/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-dashboard-with-real-api-data/specs/frontend-testing/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-dashboard-with-real-api-data/tasks.md",
+          "openspec/changes/archive/2026-07-25-enhance-fastapi-backend/design.md",
+          "openspec/changes/archive/2026-07-25-enhance-fastapi-backend/proposal.md",
+          "openspec/changes/archive/2026-07-25-enhance-fastapi-backend/specs/alembic-migrations/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-fastapi-backend/specs/api-versioning/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-fastapi-backend/specs/core-config/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-fastapi-backend/specs/cors-middleware/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-fastapi-backend/specs/database-layer/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-fastapi-backend/specs/error-handling/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-fastapi-backend/tasks.md",
+          "openspec/changes/archive/2026-07-25-enhance-vuetify-frontend-with-tests/design.md",
+          "openspec/changes/archive/2026-07-25-enhance-vuetify-frontend-with-tests/proposal.md",
+          "openspec/changes/archive/2026-07-25-enhance-vuetify-frontend-with-tests/specs/api-testing/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-vuetify-frontend-with-tests/specs/dashboard-ui/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-vuetify-frontend-with-tests/specs/theme-management/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-vuetify-frontend-with-tests/specs/vuetify-layout/spec.md",
+          "openspec/changes/archive/2026-07-25-enhance-vuetify-frontend-with-tests/tasks.md",
+          "openspec/changes/archive/2026-07-25-fix-app-vue-layout-integration/design.md",
+          "openspec/changes/archive/2026-07-25-fix-app-vue-layout-integration/proposal.md",
+          "openspec/changes/archive/2026-07-25-fix-app-vue-layout-integration/specs/app-layout-integration/spec.md",
+          "openspec/changes/archive/2026-07-25-fix-app-vue-layout-integration/tasks.md",
+          "openspec/changes/archive/2026-07-25-fix-pinia-typescript-conflict/design.md",
+          "openspec/changes/archive/2026-07-25-fix-pinia-typescript-conflict/proposal.md",
+          "openspec/changes/archive/2026-07-25-fix-pinia-typescript-conflict/specs/typescript-version/spec.md",
+          "openspec/changes/archive/2026-07-25-fix-pinia-typescript-conflict/tasks.md",
+          "openspec/changes/archive/2026-07-27-add-user-authentication-with-jwt-and-cookies/design.md",
+          "openspec/changes/archive/2026-07-27-add-user-authentication-with-jwt-and-cookies/proposal.md",
+          "openspec/changes/archive/2026-07-27-add-user-authentication-with-jwt-and-cookies/specs/user-auth/spec.md",
+          "openspec/changes/archive/2026-07-27-add-user-authentication-with-jwt-and-cookies/tasks.md",
+          "openspec/changes/archive/2026-07-27-add-users-me-endpoint/design.md",
+          "openspec/changes/archive/2026-07-27-add-users-me-endpoint/proposal.md",
+          "openspec/changes/archive/2026-07-27-add-users-me-endpoint/specs/user-profile/spec.md",
+          "openspec/changes/archive/2026-07-27-add-users-me-endpoint/tasks.md",
+          "openspec/changes/archive/2026-07-27-fix-auto-migration-on-startup/design.md",
+          "openspec/changes/archive/2026-07-27-fix-auto-migration-on-startup/proposal.md",
+          "openspec/changes/archive/2026-07-27-fix-auto-migration-on-startup/specs/auto-migration/spec.md",
+          "openspec/changes/archive/2026-07-27-fix-auto-migration-on-startup/tasks.md",
+          "openspec/changes/archive/2026-07-27-fix-frontend-login-cookie/design.md",
+          "openspec/changes/archive/2026-07-27-fix-frontend-login-cookie/proposal.md",
+          "openspec/changes/archive/2026-07-27-fix-frontend-login-cookie/specs/frontend-auth-cookie/spec.md",
+          "openspec/changes/archive/2026-07-27-fix-frontend-login-cookie/tasks.md",
+          "openspec/changes/archive/2026-07-27-fix-login-register-ref-and-404/design.md",
+          "openspec/changes/archive/2026-07-27-fix-login-register-ref-and-404/proposal.md",
+          "openspec/changes/archive/2026-07-27-fix-login-register-ref-and-404/tasks.md",
+          "openspec/changes/archive/2026-07-27-improve-auth-error-handling-and-logging/design.md",
+          "openspec/changes/archive/2026-07-27-improve-auth-error-handling-and-logging/proposal.md",
+          "openspec/changes/archive/2026-07-27-improve-auth-error-handling-and-logging/specs/auth-error-handling/spec.md",
+          "openspec/changes/archive/2026-07-27-improve-auth-error-handling-and-logging/tasks.md",
+          "openspec/changes/archive/2026-08-02-api-versioning/design.md",
+          "openspec/changes/archive/2026-08-02-api-versioning/proposal.md",
+          "openspec/changes/archive/2026-08-02-api-versioning/specs/api-routing-delegation/spec.md",
+          "openspec/changes/archive/2026-08-02-api-versioning/specs/api-version-fallback/spec.md",
+          "openspec/changes/archive/2026-08-02-api-versioning/specs/api-version-selection/spec.md",
+          "openspec/changes/archive/2026-08-02-api-versioning/specs/api-versioning-gateway/spec.md",
+          "openspec/changes/archive/2026-08-02-api-versioning/tasks.md",
+          "openspec/changes/archive/2026-08-02-create-tracing/design.md",
+          "openspec/changes/archive/2026-08-02-create-tracing/proposal.md",
+          "openspec/changes/archive/2026-08-02-create-tracing/specs/tracing.md",
+          "openspec/changes/archive/2026-08-02-create-tracing/tasks.md",
+          "openspec/changes/archive/2026-08-03-centralize-system-settings/design.md",
+          "openspec/changes/archive/2026-08-03-centralize-system-settings/proposal.md",
+          "openspec/changes/archive/2026-08-03-centralize-system-settings/specs/system-settings-api/spec.md",
+          "openspec/changes/archive/2026-08-03-centralize-system-settings/specs/system-settings-migration/spec.md",
+          "openspec/changes/archive/2026-08-03-centralize-system-settings/specs/system-settings/spec.md",
+          "openspec/changes/archive/2026-08-03-centralize-system-settings/tasks.md",
+          "openspec/changes/archive/2026-08-03-refactor-admin-pages/design.md",
+          "openspec/changes/archive/2026-08-03-refactor-admin-pages/proposal.md",
+          "openspec/changes/archive/2026-08-03-refactor-admin-pages/specs/admin-info-page/spec.md",
+          "openspec/changes/archive/2026-08-03-refactor-admin-pages/specs/admin-logs-page/spec.md",
+          "openspec/changes/archive/2026-08-03-refactor-admin-pages/specs/admin-navigation/spec.md",
+          "openspec/changes/archive/2026-08-03-refactor-admin-pages/specs/admin-settings-page/spec.md",
+          "openspec/changes/archive/2026-08-03-refactor-admin-pages/tasks.md",
+          "openspec/changes/archive/2026-08-04-add-bearer-auth-to-config-api/design.md",
+          "openspec/changes/archive/2026-08-04-add-bearer-auth-to-config-api/proposal.md",
+          "openspec/changes/archive/2026-08-04-add-bearer-auth-to-config-api/specs/bearer-auth-support/spec.md",
+          "openspec/changes/archive/2026-08-04-add-bearer-auth-to-config-api/tasks.md",
+          "openspec/changes/archive/2026-08-05-centralize-system-config-api/design.md",
+          "openspec/changes/archive/2026-08-05-centralize-system-config-api/proposal.md",
+          "openspec/changes/archive/2026-08-05-centralize-system-config-api/specs/system-config-api/spec.md",
+          "openspec/changes/archive/2026-08-05-centralize-system-config-api/tasks.md",
+          "openspec/changes/archive/2026-08-05-expand-settings-view-to-all-system-settings/design.md",
+          "openspec/changes/archive/2026-08-05-expand-settings-view-to-all-system-settings/proposal.md",
+          "openspec/changes/archive/2026-08-05-expand-settings-view-to-all-system-settings/specs/system-config-management/spec.md",
+          "openspec/changes/archive/2026-08-05-expand-settings-view-to-all-system-settings/tasks.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/design.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/proposal.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/specs/ai-task-queue/spec.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/specs/backend-api/spec.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/specs/cost-tracking/spec.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/specs/frontend-chat/spec.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/specs/llm-gateway/spec.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/specs/model-registry/spec.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/specs/system-config/spec.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/specs/vector-search/spec.md",
+          "openspec/changes/archive/2026-08-06-add-ai-features/tasks.md",
+          "openspec/changes/archive/2026-08-06-dockerdata-volume-layout/design.md",
+          "openspec/changes/archive/2026-08-06-dockerdata-volume-layout/proposal.md",
+          "openspec/changes/archive/2026-08-06-dockerdata-volume-layout/tasks.md",
+          "openspec/changes/archive/2026-08-16-fix-otel-no-data-issue/design.md",
+          "openspec/changes/archive/2026-08-16-fix-otel-no-data-issue/proposal.md",
+          "openspec/changes/archive/2026-08-16-fix-otel-no-data-issue/tasks.md",
+          "openspec/changes/archive/2026-08-17-add-frontend-metrics/design.md",
+          "openspec/changes/archive/2026-08-17-add-frontend-metrics/proposal.md",
+          "openspec/changes/archive/2026-08-17-add-frontend-metrics/specs/frontend-performance-metrics/spec.md",
+          "openspec/changes/archive/2026-08-17-add-frontend-metrics/specs/frontend-user-interaction-metrics/spec.md",
+          "openspec/changes/archive/2026-08-17-add-frontend-metrics/tasks.md",
+          "openspec/changes/archive/2026-08-17-implement-realtime-dashboard/design.md",
+          "openspec/changes/archive/2026-08-17-implement-realtime-dashboard/proposal.md",
+          "openspec/changes/archive/2026-08-17-implement-realtime-dashboard/specs/charting-library-integration/spec.md",
+          "openspec/changes/archive/2026-08-17-implement-realtime-dashboard/specs/dashboard-stats/spec.md",
+          "openspec/changes/archive/2026-08-17-implement-realtime-dashboard/specs/observability-instrumentation/spec.md",
+          "openspec/changes/archive/2026-08-17-implement-realtime-dashboard/specs/realtime-dashboard/spec.md",
+          "openspec/changes/archive/2026-08-17-implement-realtime-dashboard/tasks.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/design.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/proposal.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/specs/experiment-tracking/spec.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/specs/model-versioning/spec.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/specs/rag-document-ingestion/spec.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/specs/rag-embedding-generation/spec.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/specs/rag-llm-generation/spec.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/specs/rag-retrieval-system/spec.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/specs/rag-vector-store-integration/spec.md",
+          "openspec/changes/archive/2026-08-18-implement-mini-rag-pipeline/tasks.md",
+          "openspec/changes/archive/2026-08-18-kubernetes-deployment/design.md",
+          "openspec/changes/archive/2026-08-18-kubernetes-deployment/proposal.md",
+          "openspec/changes/archive/2026-08-18-kubernetes-deployment/specs/gcp-container-registry-integration/spec.md",
+          "openspec/changes/archive/2026-08-18-kubernetes-deployment/specs/gcp-kubernetes-deployment/spec.md",
+          "openspec/changes/archive/2026-08-18-kubernetes-deployment/tasks.md",
+          "openspec/changes/archive/2026-08-18-opentelemetry-injection/design.md",
+          "openspec/changes/archive/2026-08-18-opentelemetry-injection/proposal.md",
+          "openspec/changes/archive/2026-08-18-opentelemetry-injection/specs/opentelemetry-backend/spec.md",
+          "openspec/changes/archive/2026-08-18-opentelemetry-injection/specs/opentelemetry-collector/spec.md",
+          "openspec/changes/archive/2026-08-18-opentelemetry-injection/specs/opentelemetry-frontend/spec.md",
+          "openspec/changes/archive/2026-08-18-opentelemetry-injection/specs/opentelemetry-logging/spec.md",
+          "openspec/changes/archive/2026-08-18-opentelemetry-injection/specs/opentelemetry-prometheus/spec.md",
+          "openspec/changes/archive/2026-08-18-opentelemetry-injection/specs/opentelemetry-tracing/spec.md",
+          "openspec/changes/archive/2026-08-18-opentelemetry-injection/tasks.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — openspec",
+        "slug": "documentation-specifications-openspec",
+        "files": [
+          "openspec/config.yaml"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — openspec-design",
+        "slug": "documentation-specifications-openspec-design",
+        "files": [
+          "openspec/design/api_versioning.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — openspec-specs",
+        "slug": "documentation-specifications-openspec-specs",
+        "files": [
+          "openspec/specs/alembic-migrations/spec.md",
+          "openspec/specs/api-routing-delegation/spec.md",
+          "openspec/specs/api-testing/spec.md",
+          "openspec/specs/api-versioning/spec.md",
+          "openspec/specs/app-layout-integration/spec.md",
+          "openspec/specs/auto-migration/spec.md",
+          "openspec/specs/backend-api-versioning/spec.md",
+          "openspec/specs/backend-config/spec.md",
+          "openspec/specs/backend-cors/spec.md",
+          "openspec/specs/backend-database/spec.md",
+          "openspec/specs/backend-error-handling/spec.md",
+          "openspec/specs/backend-service/spec.md",
+          "openspec/specs/core-config/spec.md",
+          "openspec/specs/cors-middleware/spec.md",
+          "openspec/specs/dashboard-realtime/spec.md",
+          "openspec/specs/dashboard-ui/spec.md",
+          "openspec/specs/database-layer/spec.md",
+          "openspec/specs/docker-orchestration/spec.md",
+          "openspec/specs/error-handling/spec.md",
+          "openspec/specs/experiment-tracking/spec.md",
+          "openspec/specs/frontend-api/spec.md",
+          "openspec/specs/frontend-app/spec.md",
+          "openspec/specs/frontend-dashboard/spec.md",
+          "openspec/specs/frontend-layout/spec.md",
+          "openspec/specs/frontend-state/spec.md",
+          "openspec/specs/frontend-testing/spec.md",
+          "openspec/specs/frontend-theme/spec.md",
+          "openspec/specs/model-versioning/spec.md",
+          "openspec/specs/opentelemetry-backend/spec.md",
+          "openspec/specs/opentelemetry-collector/spec.md",
+          "openspec/specs/opentelemetry-frontend/spec.md",
+          "openspec/specs/opentelemetry-logging/spec.md",
+          "openspec/specs/opentelemetry-prometheus/spec.md",
+          "openspec/specs/opentelemetry-tracing/spec.md",
+          "openspec/specs/rag-document-ingestion/spec.md",
+          "openspec/specs/rag-embedding-generation/spec.md",
+          "openspec/specs/rag-llm-generation/spec.md",
+          "openspec/specs/rag-retrieval-system/spec.md",
+          "openspec/specs/rag-vector-store-integration/spec.md",
+          "openspec/specs/system-settings-api/spec.md",
+          "openspec/specs/system-settings-migration/spec.md",
+          "openspec/specs/system-settings/spec.md",
+          "openspec/specs/theme-management/spec.md",
+          "openspec/specs/tracing/spec.md",
+          "openspec/specs/typescript-version/spec.md",
+          "openspec/specs/user-profile/spec.md",
+          "openspec/specs/vuetify-layout/spec.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — openwiki",
+        "slug": "documentation-specifications-openwiki",
+        "files": [
+          "openwiki/INSTRUCTIONS.md",
+          "openwiki/architecture-deep-dive.md",
+          "openwiki/backend-service.md",
+          "openwiki/data-system-design.md",
+          "openwiki/development-workflow-performance.md",
+          "openwiki/frontend-app.md",
+          "openwiki/index.md",
+          "openwiki/observability.md",
+          "openwiki/quality-engineering-qa.md",
+          "openwiki/quickstart.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — prompts.md",
+        "slug": "documentation-specifications-prompts-md",
+        "files": [
+          "prompts.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — scripts",
+        "slug": "documentation-specifications-scripts",
+        "files": [
+          "scripts/docs-update.sh"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — specs-architecture",
+        "slug": "documentation-specifications-specs-architecture",
+        "files": [
+          "specs/architecture/spec.md"
+        ]
+      },
+      {
+        "name": "Documentation & Specifications — todo",
+        "slug": "documentation-specifications-todo",
+        "files": [
+          "todo/readme.md"
+        ]
+      }
+    ]
+  }
+]
